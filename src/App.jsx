@@ -13,6 +13,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Form/>}></Route>
           <Route path="/home" element={<Accueil/>}></Route>
+          <Route path="/form" element={<Form/>}></Route>
         </Routes>
       </Router>
     </>

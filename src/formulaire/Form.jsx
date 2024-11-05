@@ -11,11 +11,11 @@ export const Form = () => {
         <div className="questions">
             <p>Quel est votre âge ?</p>
             <select name="Choisisez votre âge">
-                <option value=""><18 Ans</option>
+                <option value="">&lt;18 Ans</option>
                 <option value="">18-25 Ans</option>
                 <option value="">25-40 Ans</option>
                 <option value="">40-60 Ans</option>
-                <option value="">>60 Ans</option>
+                <option value="">&gt;60 Ans</option>
             </select>
 
             <p>Quel est votre genre ?</p>
