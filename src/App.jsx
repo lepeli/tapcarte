@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import { Navbar } from './navbar/Navbar'
 import { Accueil } from './accueil/Accueil'
 import { Formulaire } from './formulaire/Formulaire'
+import { Login } from "./login/Login"
+
 function App() {
 
   return (
@@ -11,9 +13,9 @@ function App() {
       <Navbar></Navbar>
       <Router>
         <Routes>
-          <Route path="/" element={<Formulaire/>}></Route>
+          <Route path="/" element={<Login/>}></Route>
           <Route path="/home" element={<Accueil/>}></Route>
-          <Route path="/form" element={<Form/>}></Route>
+          <Route path="/form" element={<Formulaire/>}></Route>
         </Routes>
       </Router>
     </>
