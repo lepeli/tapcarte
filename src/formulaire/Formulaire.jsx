@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom"
 
-export const Form = () => {
+export const Formulaire = () => {
 
     return <>
         <div className="titre">

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import { Navbar } from './navbar/Navbar'
 import { Accueil } from './accueil/Accueil'
-import { Form } from './formulaire/Form'
+import { Formulaire } from './formulaire/Formulaire'
 function App() {
 
   return (
@@ -11,7 +11,7 @@ function App() {
       <Navbar></Navbar>
       <Router>
         <Routes>
-          <Route path="/" element={<Form/>}></Route>
+          <Route path="/" element={<Formulaire/>}></Route>
           <Route path="/home" element={<Accueil/>}></Route>
           <Route path="/form" element={<Form/>}></Route>
         </Routes>
