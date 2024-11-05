@@ -30,7 +30,7 @@ export const Formulaire = () => {
                 <option>Je suis en couple</option>
                 <option>Je suis avec ma famille</option>
             </select>
-            <p>Quel est votre budget ?</p>
+            <p>Quel est votre budget ? $0-$500</p>
             <Slider defaultValue={[33]} max={500} step={1} />
             <p>Quel genre de sortie vous intéresse le plus ?</p>
             <select name="intrests">
