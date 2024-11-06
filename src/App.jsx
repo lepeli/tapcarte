@@ -6,6 +6,7 @@ import { Accueil } from './accueil/Accueil'
 import { Formulaire } from './formulaire/Formulaire'
 import { Login } from "./login/Login"
 import { Services } from './services/Services'
+import { Bottom_bar } from './navbar/bottom_bar/Bottom_bar'
 
 function App() {
 
@@ -17,7 +18,7 @@ function App() {
           <Route path="/" element={<Login/>}></Route>
           <Route path="/home" element={<Accueil/>}></Route>
           <Route path="/form" element={<Formulaire/>}></Route>
-          <Route path="/services" element={<Services/>}></Route>
+          <Route path="/services" element={<><Services/><Bottom_bar/></>}></Route>
         </Routes>
       </Router>
     </>

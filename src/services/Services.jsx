@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom"
 import "./Services.css"
 
-import ReactDOM from 'react-dom'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
 

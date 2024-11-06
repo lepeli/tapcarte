@@ -1,0 +1,14 @@
+.bottom_bar{
+    display: flex;
+    justify-content: space-evenly;
+    width: 412px;
+    height: 54px;
+    background:#192525;
+    color: white;
+    .bottom_bar_icon{
+        position: relative;
+        top:7px;
+        width: 36px;
+        height: 36px;
+    }
+}
