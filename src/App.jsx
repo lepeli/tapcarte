@@ -7,7 +7,7 @@ import { Formulaire } from './formulaire/Formulaire'
 import { Login } from "./login/Login"
 import { Services } from './services/Services'
 import { Bottom_bar } from './navbar/bottom_bar/Bottom_bar'
-
+import { Restaurant } from './resto/Restaurant'
 function App() {
 
   return (
@@ -19,6 +19,7 @@ function App() {
           <Route path="/home" element={<Accueil/>}></Route>
           <Route path="/form" element={<Formulaire/>}></Route>
           <Route path="/services" element={<><Services/><Bottom_bar/></>}></Route>
+          <Route path="/restaurant" element={<><Restaurant/><Bottom_bar/></>}></Route>
         </Routes>
       </Router>
     </>

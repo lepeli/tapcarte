@@ -14,7 +14,7 @@ export const Services = () => {
             <div className="service_1">
                 <p className="service_1_name">Restaurants</p>
                 <p className="service_1_horaire">Horaires: 10h-23h</p>
-                <Link to="/">
+                <Link to="/restaurant">
                     <FontAwesomeIcon icon={faCircleRight} className="resto_button"/>
                 </Link>
             </div>
