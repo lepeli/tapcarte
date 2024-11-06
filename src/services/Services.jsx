@@ -1,5 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom"
 import "./Services.css"
+
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
 
 export const Services = () => {
     return( 
@@ -9,11 +14,15 @@ export const Services = () => {
             <div className="service_1">
                 <p className="service_1_name">Restaurants</p>
                 <p className="service_1_horaire">Horaires: 10h-23h</p>
+                <Link to="/">
+                    <FontAwesomeIcon icon={faCircleRight} className="resto_button"/>
+                </Link>
             </div>
             <div className="service_2">
                 <p className="service_2_name">Spa/Hammam</p>
                 <p className="service_2_horaire">Horaires: 8h-23h</p>
                 <p className="service_2_age">Reservé au +16 ans</p>
+                <button className="service_2_button">Réserver</button>
             </div>
             <div className="service_1">
                 <p className="service_1_name">Piscine</p>

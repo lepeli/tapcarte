@@ -33,6 +33,14 @@
     }
 }
 
+.resto_button{
+    position: relative;
+    left:330px;
+    bottom:35px;
+    color: white;
+    width: 35px;
+    height: 35px;
+}
 .service_2{
     background:#3B575A;
     border: 1px solid;
@@ -49,5 +57,15 @@
     }
     .service_2_horaire{
         font-size: 15px;
+    }
+    .service_2_button{
+        position: relative;
+        left:250px;
+        bottom:45px;
+        color:white;
+        width: 122px;
+        height: 40px;
+        background: #2C2C2C;
+        border-radius: 8px;
     }
 }
