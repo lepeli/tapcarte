@@ -1,14 +1,17 @@
 import React from "react";
 import "./Login.css"
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Calendar } from "@/components/ui/calendar"
 import {Popover,PopoverContent,PopoverTrigger} from "@/components/ui/popover"
+
 import { addDays, format } from "date-fns"
-// import { DateRange } from "react-day-picker"
 import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
+
+import {useNavigate} from "react-router-dom"
 
 
 // const formSchema = z.object({
@@ -26,16 +29,38 @@ import { cn } from "@/lib/utils"
 export const Login = () => {
     const [dateArrivee, setDateArrivee] = React.useState();
     const [dateDepart, setDateDepart] = React.useState();
+    const [firstName, setFirstName] = React.useState();
+    const [lastName, setLastName] = React.useState();
+
+    const firstNameHandler = event => {
+        setFirstName(event.target.value);
+    };
+
+    const lastNameHandler = event => {
+        setLastName(event.target.value);
+     };
+
+    const navigate = useNavigate();
+
+
+    const setupData = event => {
+        event.preventDefault();
+        localStorage.setItem("firstName", firstName);
+        localStorage.setItem("lastName", lastName);
+    
+        navigate("/form")
+    }
+
     return <div className="login_page">
         <p className="text-center hero">Rentrez vos informations</p>
 
-        <div className="formulaire">
+        <form className="formulaire" onSubmit={setupData}>
 
             <Label htmlFor="nom">Rentrez votre nom:</Label>
-            <Input id="nom" placeholder="Dupond"></Input>
+            <Input id="nom" placeholder="Dupond" onChange={lastNameHandler}></Input>
 
             <Label htmlFor="prenom">Rentrez votre prénom:</Label>
-            <Input id="prenom" placeholder="Michel"></Input>
+            <Input id="prenom" placeholder="Michel" onChange={firstNameHandler}></Input>
 
             <Label htmlFor="email">Rentrez votre email:</Label>
             <Input id="email" placeholder="michel.dupond@56k.ing"></Input>
@@ -52,7 +77,7 @@ export const Login = () => {
                     )}
                     >
                     <CalendarIcon />
-                    {dateArrivee ? format(dateArrivee, "PPP") : <span>Pick a date</span>}
+                    {dateArrivee ? format(dateArrivee, "PPP") : <span>Selectionnez une date</span>}
                     </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -77,7 +102,7 @@ export const Login = () => {
                     )}
                     >
                     <CalendarIcon />
-                    {dateDepart ? format(dateDepart, "PPP") : <span>Pick a date</span>}
+                    {dateDepart ? format(dateDepart, "PPP") : <span>Selectionnez une date</span>}
                     </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
@@ -95,9 +120,8 @@ export const Login = () => {
             <br />
             <Button type="submit" className="submit size-full">Valider</Button>
 
-        </div>
+        </form>
 
     </div>
-
 
 }
