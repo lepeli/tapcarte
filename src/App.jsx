@@ -5,6 +5,7 @@ import { Navbar } from './navbar/Navbar'
 import { Accueil } from './accueil/Accueil'
 import { Formulaire } from './formulaire/Formulaire'
 import { Login } from "./login/Login"
+import { Services } from './services/Services'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
           <Route path="/" element={<Login/>}></Route>
           <Route path="/home" element={<Accueil/>}></Route>
           <Route path="/form" element={<Formulaire/>}></Route>
+          <Route path="/services" element={<Services/>}></Route>
         </Routes>
       </Router>
     </>

@@ -29,3 +29,11 @@ select{
     width: 250px;
 }
 
+.form_links{
+    position: relative;
+    left:50px;
+}
+.trademark{
+    position: relative;
+    left:40px;
+}
