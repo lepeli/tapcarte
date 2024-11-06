@@ -18,7 +18,7 @@ export const Accueil = () => {
         {path: "/src/assets/caroussel/piscine.jpg", desc: "Vue sur la piscine"}
     ]
     return <>
-        <div>
+        <div className="acceuil_page">
 
             <img src="" alt="" />
 
