@@ -1,0 +1,46 @@
+.login_page{
+    background:#E9EFEB;
+    width:412px;
+    height:883px;
+}
+
+.rentrez_infos{
+    position: relative;
+    font-size: 30px;
+    left:106px;
+    width: 200px;
+    top:10px;
+    color:
+}
+
+.formulaire{
+    height: 526px;;
+    width: 320px;
+    background:#192525;
+    border-radius: 8px;;
+    position: relative;
+    left:50px;
+    top:20px;
+
+    Label{
+        /* position: relative;
+        left:15px;
+        top:25px; */
+        color: white;
+    }
+
+    Input{
+        /* position: relative;
+        top:25px; */
+        color:  black;
+        background: white;
+    }
+
+    Input::placeholder{
+        color: grey;
+    }
+
+    Popover{
+        /* top:25px; */
+    }
+}

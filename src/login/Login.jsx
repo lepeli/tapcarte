@@ -1,102 +1,85 @@
-
-import { Link } from "react-router-dom";
-
-import { Form, FormLabel, FormControl, FormField } from "@/components/ui/form";
-import {Popover,PopoverContent,PopoverTrigger} from "@/components/ui/popover"
+import React from "react";
+import "./Login.css"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-
+import { Calendar } from "@/components/ui/calendar"
+import {Popover,PopoverContent,PopoverTrigger} from "@/components/ui/popover"
+import { addDays, format } from "date-fns"
+// import { DateRange } from "react-day-picker"
+import { Calendar as CalendarIcon } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { useForm } from "react-hook-form";
-import { z } from "zod"
-import { zodResolver } from "@hookform/resolvers/zod"
 
 
-const formSchema = z.object({
-    // prenom: z.string().min(1, {
-    //     message: "Le prénom doit avoir 1 cartactère minimum"
-    // }).max(50),
-    nom: z.string().min(1, {
-        message: "Le nom doit avoir au moins 1 caractère"
-    }).max(50),
-    dateArrivee: z.date({
-        required_error: "Une date est nécessaire"
-    })
-})
+// const formSchema = z.object({
+//     // prenom: z.string().min(1, {
+//     //     message: "Le prénom doit avoir 1 cartactère minimum"
+//     // }).max(50),
+//     nom: z.string().min(1, {
+//         message: "Le nom doit avoir au moins 1 caractère"
+//     }).max(50),
+//     dateArrivee: z.date({
+//         required_error: "Une date est nécessaire"
+//     })
+// })
 
 export const Login = () => {
-    const form = useForm<z.infer<typeof formSchema>>({
-        resolver: zodResolver(formSchema),
-        defaultValues: {
-          nom: ""
-        },
+    const [date, setDate] = React.useState({
+        from: new Date(),
       })
-    console.log(form)
-    return <>
-        <h1>Rentrez vos informations</h1>
+
+    return <div className="login_page">
+        <p className="rentrez_infos">Rentrez vos informations</p>
 
         <div className="formulaire">
-        
-        <Form {...form}>
 
-            <Label htmlFor="nom">Rentrez votre nom:</Label>
-            <Input id="nom" placeholder="Dupond"></Input>
+        <Label htmlFor="nom">Rentrez votre nom:</Label>
+        <Input id="nom" placeholder="Dupond"></Input>
 
-            <Label htmlFor="prenom">Rentrez votre prénom:</Label>
-            <Input id="prenom" placeholder="Michel"></Input>
+        <Label htmlFor="prenom">Rentrez votre prénom:</Label>
+        <Input id="prenom" placeholder="Michel"></Input>
 
-            <Label htmlFor="email">Rentrez votre email:</Label>
-            <Input id="email" placeholder="michel.dupond@56k.ing"></Input>
+        <Label htmlFor="email">Rentrez votre email:</Label>
+        <Input id="email" placeholder="michel.dupond@56k.ing"></Input>
 
-            <Label htmlFor="dateArrivee">Date d'arrivée:</Label>
-            <FormField
-            control={form.control}
-            name="dateArrivee"
-            render={({ field }) => (
-                <FormItem className="flex flex-col">
-                <FormLabel>Date of birth</FormLabel>
-                <Popover>
-                    <PopoverTrigger asChild>
-                    <FormControl>
-                        <Button
-                        variant={"outline"}
-                        className={cn(
-                            "w-[240px] pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
-                        )}
-                        >
-                        {field.value ? (
-                            format(field.value, "PPP")
-                        ) : (
-                            <span>Pick a date</span>
-                        )}
-                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                    </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
-                    <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={field.onChange}
-                        disabled={(date) =>
-                        date > new Date() || date < new Date("1900-01-01")
-                        }
-                        initialFocus
-                    />
-                    </PopoverContent>
-                </Popover>
-                <FormDescription>
-                    Your date of birth is used to calculate your age.
-                </FormDescription>
-                <FormMessage />
-                </FormItem>
-            )}
-            />
-
-        </Form>
-
+        <div className={cn("grid gap-2")}>
+            <Popover>
+                <PopoverTrigger asChild>
+                <Button
+                    id="date"
+                    variant={"outline"}
+                    className={cn(
+                    "w-[300px] justify-start text-left font-normal",
+                    !date && "text-muted-foreground"
+                    )}
+                >
+                    <CalendarIcon />
+                    {date?.from ? (
+                    date.to ? (
+                        <>
+                        {format(date.from, "LLL dd, y")} -{" "}
+                        {format(date.to, "LLL dd, y")}
+                        </>
+                    ) : (
+                        format(date.from, "LLL dd, y")
+                    )
+                    ) : (
+                    <span>Pick a date</span>
+                    )}
+                </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                <Calendar
+                    initialFocus
+                    mode="range"
+                    defaultMonth={date?.from}
+                    selected={date}
+                    onSelect={setDate}
+                    numberOfMonths={2}
+                />
+                </PopoverContent>
+            </Popover>
+            </div>
         </div>
 
         {/* <Form {...form}>
@@ -114,6 +97,6 @@ export const Login = () => {
             <Button type="submit">Confirmer</Button>
         </Form> */}
 
-    </>
+    </div>
 
 }
