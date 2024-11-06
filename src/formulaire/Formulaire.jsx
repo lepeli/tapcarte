@@ -40,15 +40,15 @@ export const Formulaire = () => {
                 <option>Balades</option>
             </select>
         </div>
-        <div classname="form_links">
-             <div classname="form_suivant">
+        <div className="form_links">
+             <div className="form_suivant">
                  <Link to={"/home"}>Suivant →</Link>
              </div>
              <div>
                  <Link to={"/home"}>Passer</Link>
              </div>
         </div>
-        <div classname="trademark">
+        <div className="trademark">
             <p>TAP' Carte - Tous droits réservés 2024</p>
         </div>
         
