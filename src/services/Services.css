@@ -1,0 +1,53 @@
+.service_page{
+    background:#E9EFEB;
+    width:412px;
+    height:883px;
+}
+
+.service_list{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left:10px;
+    top:10px;
+    height: 600px;
+    justify-content: space-evenly;
+}
+
+.service_1{
+    background:#3B575A;
+    border: 1px solid;
+    border-radius: 8px;
+    width: 395px;
+    height: 99px;
+    p{
+        position: relative;
+        left:20px;
+        color:white;
+    }
+    .service_1_name{
+        font-size: 25px;
+    }
+    .service_1_horaire{
+        font-size: 15px;
+    }
+}
+
+.service_2{
+    background:#3B575A;
+    border: 1px solid;
+    border-radius: 8px;
+    width: 395px;
+    height: 116px;
+    p{
+        position: relative;
+        left:20px;
+        color:white;
+    }
+    .service_2_name{
+        font-size: 25px;
+    }
+    .service_2_horaire{
+        font-size: 15px;
+    }
+}
