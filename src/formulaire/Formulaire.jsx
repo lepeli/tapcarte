@@ -4,10 +4,12 @@ import { Slider } from "@/components/ui/slider"
 
 export const Formulaire = () => {
 
+    const firstName = localStorage.getItem("firstName") == null ? "Demo" : localStorage.getItem("firstName")
+    const lastName = localStorage.getItem("lastName") == null ? "Michel" : localStorage.getItem("lastName")
+
     return <div className="formulaire_page">
         <div className="titre">
-            <h1 className="text-center hero">Bienvenue Michel Dupont afin d'améliorer votre experience client
-            , nous vous invitons à répondre à quelques questions.</h1>
+            <h1 className="text-center hero">Bienvenue {firstName} {lastName},afin d'améliorer votre experience, nous vous invitons à répondre à quelques questions.</h1>
         </div>
         <div className="questions">
             <p>Quel est votre âge ?</p>
