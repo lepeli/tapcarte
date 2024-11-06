@@ -6,7 +6,7 @@ export const Formulaire = () => {
 
     return <>
         <div className="titre">
-            <h1>Bienvenue Michel Dupont afin d'améliorer votre experience client
+            <h1 className="text-center hero">Bienvenue Michel Dupont afin d'améliorer votre experience client
             , nous vous invitons à répondre à quelques questions.</h1>
         </div>
         <div className="questions">

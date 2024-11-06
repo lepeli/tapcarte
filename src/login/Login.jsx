@@ -24,79 +24,80 @@ import { cn } from "@/lib/utils"
 // })
 
 export const Login = () => {
-    const [date, setDate] = React.useState({
-        from: new Date(),
-      })
-
+    const [dateArrivee, setDateArrivee] = React.useState();
+    const [dateDepart, setDateDepart] = React.useState();
     return <div className="login_page">
-        <p className="rentrez_infos">Rentrez vos informations</p>
+        <p className="text-center hero">Rentrez vos informations</p>
 
         <div className="formulaire">
 
-        <Label htmlFor="nom">Rentrez votre nom:</Label>
-        <Input id="nom" placeholder="Dupond"></Input>
+            <Label htmlFor="nom">Rentrez votre nom:</Label>
+            <Input id="nom" placeholder="Dupond"></Input>
 
-        <Label htmlFor="prenom">Rentrez votre prénom:</Label>
-        <Input id="prenom" placeholder="Michel"></Input>
+            <Label htmlFor="prenom">Rentrez votre prénom:</Label>
+            <Input id="prenom" placeholder="Michel"></Input>
 
-        <Label htmlFor="email">Rentrez votre email:</Label>
-        <Input id="email" placeholder="michel.dupond@56k.ing"></Input>
+            <Label htmlFor="email">Rentrez votre email:</Label>
+            <Input id="email" placeholder="michel.dupond@56k.ing"></Input>
+            
+            <Label htmlFor="dateArrivee">Date d'arrivée:</Label>
 
-        <div className={cn("grid gap-2")}>
-            <Popover>
+            <Popover id="dateArrivee">
                 <PopoverTrigger asChild>
-                <Button
-                    id="date"
+                    <Button
                     variant={"outline"}
                     className={cn(
-                    "w-[300px] justify-start text-left font-normal",
-                    !date && "text-muted-foreground"
+                        "w-[240px] justify-start text-left font-normal size-full",
+                        !dateArrivee && "text-muted-foreground"
                     )}
-                >
+                    >
                     <CalendarIcon />
-                    {date?.from ? (
-                    date.to ? (
-                        <>
-                        {format(date.from, "LLL dd, y")} -{" "}
-                        {format(date.to, "LLL dd, y")}
-                        </>
-                    ) : (
-                        format(date.from, "LLL dd, y")
-                    )
-                    ) : (
-                    <span>Pick a date</span>
-                    )}
-                </Button>
+                    {dateArrivee ? format(dateArrivee, "PPP") : <span>Pick a date</span>}
+                    </Button>
                 </PopoverTrigger>
                 <PopoverContent className="w-auto p-0" align="start">
-                <Calendar
+                    <Calendar
+                    mode="single"
+                    selected={dateArrivee}
+                    onSelect={setDateArrivee}
                     initialFocus
-                    mode="range"
-                    defaultMonth={date?.from}
-                    selected={date}
-                    onSelect={setDate}
-                    numberOfMonths={2}
-                />
+                    />
                 </PopoverContent>
             </Popover>
-            </div>
+            <br />
+            <Label htmlFor="dateDepart">Date de départ:</Label>
+
+            <Popover id="dateDepart" style="display: block;">
+                <PopoverTrigger asChild>
+                    <Button
+                    variant={"outline"}
+                    className={cn(
+                        "w-[240px] justify-start text-left font-normal size-full",
+                        !dateDepart && "text-muted-foreground"
+                    )}
+                    >
+                    <CalendarIcon />
+                    {dateDepart ? format(dateDepart, "PPP") : <span>Pick a date</span>}
+                    </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0" align="start">
+                    <Calendar
+                    mode="single"
+                    selected={dateDepart}
+                    onSelect={setDateDepart}
+                    initialFocus
+                    />
+                </PopoverContent>
+            </Popover>
+
+
+            <br />
+            <br />
+            <Button type="submit" className="submit size-full">Valider</Button>
+
         </div>
 
-        {/* <Form {...form}>
-
-            <FormField
-                control={form.control}
-                name="nom"
-                >
-                <FormLabel>Nom</FormLabel>
-                <FormControl>
-                    <Input placeholder="Dupont"></Input>
-                </FormControl>
-            </FormField>
-
-            <Button type="submit">Confirmer</Button>
-        </Form> */}
-
     </div>
+
 
 }

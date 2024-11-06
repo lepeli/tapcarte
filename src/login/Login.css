@@ -4,23 +4,26 @@
     height:883px;
 }
 
-.rentrez_infos{
-    position: relative;
-    font-size: 30px;
-    left:106px;
-    width: 200px;
-    top:10px;
-    color:
+td[aria-selected="true"]{
+    background: grey;
+}
+
+.hero {
+    padding-top: 2em;
+    font-size: 1.5rem;
 }
 
 .formulaire{
-    height: 526px;;
+    font-size: 1.1rem;
+    /* height: 526px;; */
     width: 320px;
     background:#192525;
     border-radius: 8px;;
     position: relative;
-    left:50px;
+    left:50px;  
     top:20px;
+
+    padding: 2em;
 
     Label{
         /* position: relative;
@@ -38,6 +41,10 @@
 
     Input::placeholder{
         color: grey;
+    }
+
+    .submit{
+        background: #3B575A;
     }
 
     Popover{
