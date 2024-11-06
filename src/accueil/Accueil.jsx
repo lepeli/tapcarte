@@ -1,5 +1,5 @@
 import React from "react";
-import "./Accueil.css"
+import "./Acceuil.css"
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
