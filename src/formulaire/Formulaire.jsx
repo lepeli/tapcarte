@@ -1,10 +1,10 @@
-
+import "./Formulaire.css"
 import { Link } from "react-router-dom"
 import { Slider } from "@/components/ui/slider"
 
 export const Formulaire = () => {
 
-    return <>
+    return <div className="formulaire_page">
         <div className="titre">
             <h1 className="text-center hero">Bienvenue Michel Dupont afin d'améliorer votre experience client
             , nous vous invitons à répondre à quelques questions.</h1>
@@ -31,7 +31,7 @@ export const Formulaire = () => {
                 <option>Je suis avec ma famille</option>
             </select>
             <p>Quel est votre budget ? $0-$500</p>
-            <Slider defaultValue={[33]} max={500} step={1} />
+            <Slider defaultValue={[33]} max={500} step={1} className="budget_slider"/>
             <p>Quel genre de sortie vous intéresse le plus ?</p>
             <select name="intrests">
                 <option>Musée</option>
@@ -52,5 +52,5 @@ export const Formulaire = () => {
             <p>TAP' Carte - Tous droits réservés 2024</p>
         </div>
         
-    </>
+    </div>
 }
