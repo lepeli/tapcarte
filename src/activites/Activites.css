@@ -4,3 +4,54 @@
     width: 412px;
     color:white
 }
+
+.activites_icon{
+    position: relative;
+    top:20px;
+    display: flex;
+    justify-content:space-evenly;
+    p{
+        position: relative;
+    }
+    .activites_icon_backround{
+        background: #D0EBDA;
+        width: 50px;
+        height: 50px;
+        border-radius: 8px;
+        .activites_icon_resto{
+            position: relative;
+            left:10px;
+            top:3px;
+        }
+        img{
+            position: relative;
+            left:5px;
+            top:6px;
+        }
+    }
+    .activites_icon_name_1{
+        position: relative;
+        right:15px;
+        top:10px;
+    }
+    .activites_icon_name_2{
+        position: relative;
+        left:5px;
+        top:14px;
+    }
+    .activites_icon_name_3{
+        position: relative;
+        right:3px;
+        top:11px;
+    }
+    .activites_icon_name_4{
+        position: relative;
+        top:16.9px;
+        right: 26px;
+    }
+}
+
+.activite_recommendation{
+    position: relative;
+    top:10px;
+}
