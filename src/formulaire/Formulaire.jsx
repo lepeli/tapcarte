@@ -4,11 +4,20 @@ import { Slider } from "@/components/ui/slider"
 import { Select, SelectItem, SelectContent, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 export const Formulaire = () => {
 
     const firstName = localStorage.getItem("firstName") == null ? "Demo" : localStorage.getItem("firstName")
     const lastName = localStorage.getItem("lastName") == null ? "Michel" : localStorage.getItem("lastName")
+
+    const [budget, setBudget] = useState(33);
+
+
+    const updateBudget = event => {
+        console.log("Zeb")
+        setBudget(event.target.value);
+    }
 
     const navigate = useNavigate();
 
@@ -21,8 +30,8 @@ export const Formulaire = () => {
             <h1 className="text-center hero">Bienvenue {firstName} {lastName},afin d'améliorer votre experience, nous vous invitons à répondre à quelques questions.</h1>
         </div>
         <div className="questions">
-            
-            <Select name="age">
+            <Label htmlFor="age">Quel est votre âge ?</Label>
+            <Select id="age">
                 <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Votre âge" />
                 </SelectTrigger>
@@ -34,8 +43,8 @@ export const Formulaire = () => {
                     <SelectItem value="5">&gt;60 Ans</SelectItem>
                 </SelectContent>
             </Select>
-            <p>Quel est votre genre ?</p>
-            <Select name="gender">
+            <Label htmlFor="gender">Quel est votre genre ?</Label>
+            <Select id="gender">
                 <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Votre genre" />
                 </SelectTrigger>
@@ -45,8 +54,8 @@ export const Formulaire = () => {
                     <SelectItem value="3">Autre</SelectItem>
                 </SelectContent>
             </Select>
-            <p>Avec qui êtes vous accompagné ?</p>
-            <Select name="family">
+            <Label htmlFor="family">Avec qui êtes vous accompagné ?</Label>
+            <Select id="family">
                 <SelectTrigger className="w-[180px]">
                     <SelectValue placeholder="Accompagnement" />
                 </SelectTrigger>
@@ -56,10 +65,11 @@ export const Formulaire = () => {
                     <SelectItem value="3">Je suis avec ma famille</SelectItem>
                 </SelectContent>
             </Select>
-            <p>Quel est votre budget ? $0-$500</p>
-            <Slider defaultValue={[33]} max={500} step={1} className="budget_slider"/>
-            <p>Quel genre de sortie vous intéresse le plus ?</p>
-            <Select name="intrests">
+            <Label htmlFor="budgetSlider">Quel est votre budget ? $0-$500</Label>
+            <Slider id="budgetSlider" onValueChange={setBudget} defaultValue={[33]} max={500} step={1} className="budget_slider"/>
+            <p>Votre budget est de: ${budget}</p>
+            <Label htmlFor="interests">Quel genre de sortie vous intéresse le plus ?</Label>
+            <Select id="interests">
                 <SelectTrigger className="w-[180px]">
                         <SelectValue placeholder="Activité" />
                 </SelectTrigger>
