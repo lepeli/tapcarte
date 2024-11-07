@@ -52,6 +52,41 @@
 }
 
 .activite_recommendation{
-    position: relative;
+    position: relative;                                                                                                         
     top:10px;
+}
+
+.activite_recommendation_box{
+    position: relative;
+    left:9px;
+    color: black;
+    display: flex;
+    gap:5px;
+    flex-direction: column;
+    position:relative;
+    top:15px;
+    height: 125px;
+    width: 395px;
+    background:#D0EBDA;
+    border-radius: 8px;
+    p{
+        position: relative;
+        top:5px;
+    }
+    button{
+        color: white;
+        position: relative;
+        left:250px;
+        bottom:30px;
+        background: #2C2C2C;
+        height: 400px;
+        width: 122px;
+        border-radius: 8px;
+    }                                                                                                                                                                                                                             ;
+}
+
+.activites_carte{
+    position: relative;
+    left:26px;
+    border-radius: 8px;
 }

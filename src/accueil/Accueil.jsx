@@ -24,12 +24,16 @@ export const Accueil = () => {
         {path: "/src/assets/caroussel/mer.jpg", desc: "Vue sur la mer"},
         {path: "/src/assets/caroussel/piscine.jpg", desc: "Vue sur la piscine"}
     ]
+
+    const firstName = localStorage.getItem("firstName") == null ? "Demo" : localStorage.getItem("firstName")
+    const lastName = localStorage.getItem("lastName") == null ? "Michel" : localStorage.getItem("lastName")
+
     return <>
         <div className="acceuil_page">
             <div className="acceuil_header">
                 <img src="" alt="" />
 
-                <h1 className="hero">Bienvenue Micheeel Dupont.</h1>
+                <h1 className="hero">Bienvenue {firstName} {lastName}.</h1>
 
                 <h2>Dans votre hôtel:</h2>
             </div>
@@ -71,8 +75,8 @@ export const Accueil = () => {
             </div>
             <div className="acceuil_activites">
                 <h2>Activités proches</h2>
-                <p>- PLage Bleue (2km)</p>
-                <p>- Sortie en quand (5km)</p>
+                <p>- Plage Bleue (2km)</p>
+                <p>- Sortie en quad (5km)</p>
                 <p>- Aquarium (8km)</p>
                 <Link to="/activites">
                 <button className="acceuil_activites_button">Voir plus</button>

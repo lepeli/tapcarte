@@ -14,11 +14,15 @@ export const Bottom_bar = () =>{
             <Link to="/services">
                 <FontAwesomeIcon icon={faList} className="bottom_bar_icon"/>
             </Link>
-            <FontAwesomeIcon icon={faCalendar} className="bottom_bar_icon"/>
+            <Link to="/activites">
+                <FontAwesomeIcon icon={faCalendar} className="bottom_bar_icon"/>
+            </Link>
             <Link to="/home">
                 <FontAwesomeIcon icon={faHouse} className="bottom_bar_icon"/>
             </Link>
-            <FontAwesomeIcon icon={faHeart} className="bottom_bar_icon"/>
+            <Link to="/rating">
+                <FontAwesomeIcon icon={faHeart} className="bottom_bar_icon"/>
+            </Link>
             <Link to="/contact">
                 <FontAwesomeIcon icon={faPhone} className="bottom_bar_icon"/>
             </Link>
