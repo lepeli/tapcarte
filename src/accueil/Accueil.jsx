@@ -1,6 +1,13 @@
 import React from "react";
 import "./Acceuil.css"
 
+import acceuil_image_1 from "../assets/image_19.png"
+import acceuil_image_2 from "../assets/image_4.png"
+
+import { Link } from "react-router-dom"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleRight } from '@fortawesome/free-solid-svg-icons'
+
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import {
   Carousel,
@@ -19,15 +26,16 @@ export const Accueil = () => {
     ]
     return <>
         <div className="acceuil_page">
+            <div className="acceuil_header">
+                <img src="" alt="" />
 
-            <img src="" alt="" />
+                <h1 className="hero">Bienvenue Micheeel Dupont.</h1>
 
-            <h1 className="hero">Bienvenue Michel Dupont.</h1>
-
-            <h2>Dans votre hôtel:</h2>
+                <h2>Dans votre hôtel:</h2>
+            </div>
 
             {/* Prier pour que le carroussel marche */}
-
+            <div className="acceuil_carousel">
             <Carousel className="w-full max-w-[90%] md:max-w-[80%] lg:max-w-[80%]">
                 <CarouselContent>
                     {images.map((image, index) => (
@@ -53,11 +61,22 @@ export const Accueil = () => {
                 <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2" />
                 <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2" />
             </Carousel>
-            <h2>Activités proches</h2>
-            <div className="activities">
-                {/* Normalement je suis censé ajouter une liste d'activités ici */}
-
             </div>
+            <div className="acceuil_images">
+                    <img src={acceuil_image_1} alt="hotel_image_1" className="acceuil_image_1"></img>
+                    <img src={acceuil_image_2} alt="hotel_image_2" className="acceuil_image_2"></img>
+                    <Link to="/services">
+                        <FontAwesomeIcon icon={faCircleRight} className="acceuil_circle_button"/>
+                    </Link>
+            </div>
+            <div className="acceuil_activites">
+                <h2>Activités proches</h2>
+                <p>- PLage Bleue (2km)</p>
+                <p>- Sortie en quand (5km)</p>
+                <p>- Aquarium (8km)</p>
+                <Link to="/services" className="acceuil_activites_button">Voir plus</Link>
+            </div>
+            
 
         </div>
     </>

@@ -1,6 +1,59 @@
 .acceuil_page{
+    width: 412px;
+    height: 883px;
+}
+
+.acceuil_header{
+    position: relative;
+    bottom:40px;
+}
+.acceuil_carousel{
+    position: relative;
+    left:20px;
+    bottom:20px;
     img{
-        border-radius: 8px;
         border: 1px solid;
+        border-radius: 8px;
+    }
+}
+.acceuil_images{
+    position: relative;
+    left:20px;
+    display: flex;
+    gap: 20px;
+    .acceuil_circle_button{
+        position: relative;
+        right: 14px;
+        top:42px;
+        color:black;
+        width: 30px;
+        height: 30px;
+    }
+}
+
+.acceuil_activites{
+    position: relative;
+    display: flex;
+    left:20px;
+    top:10px;
+    gap:15px;
+    flex-direction: column;
+    width: 352px;
+    height: 180px;
+    color:white;
+    background:#3B575A ;
+    border-radius: 8px;
+    p{
+        position: relative;
+        left:20px;
+    }
+    .acceuil_activites_button{
+        position: relative;
+        bottom: 20px;
+        left:200px;
+        width: 122px;
+        height: 150px;
+        background:#2C2C2C;
+        border-radius: 8px;
     }
 }
