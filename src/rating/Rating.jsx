@@ -16,7 +16,7 @@ export const Rating = () => {
 
         <h1 className="hero text-center">Merci pour votre séjour au Swiss Inn !</h1>
         <p className="text-center">Nous vous invitons à remplir ce questionnaire de satisfaction</p>
-
+        <div className="rating_questionnaire">
         <div className="questionnaire p-8 mt-8">
 
             <Label htmlFor="">Comment avez-vous connu notre établissement ?</Label>
@@ -63,6 +63,7 @@ export const Rating = () => {
                 <Button type="submit">Envoyer</Button>
             </div>
 
+        </div>
         </div>
     </>
 
