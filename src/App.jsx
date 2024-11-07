@@ -10,6 +10,8 @@ import { Bottom_bar } from './navbar/bottom_bar/Bottom_bar'
 import { Restaurant } from './resto/Restaurant'
 import { Rating } from './rating/Rating'
 import { Contact } from './contacts/Contact'
+import { Activites } from './activites/Activites'
+
 function App() {
 
   return (
@@ -24,6 +26,8 @@ function App() {
           <Route path="/restaurant" element={<><Restaurant/><Bottom_bar/></>}></Route>
           <Route path="/rating" element={<><Rating></Rating></>}></Route>
           <Route path="/contact" element={<><Contact/><Bottom_bar/></>}></Route>
+          <Route path="/activites" element={<><Activites/><Bottom_bar/></>}></Route>
+
         </Routes>
       </Router>
     </>
