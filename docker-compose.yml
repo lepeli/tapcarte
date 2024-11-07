@@ -2,10 +2,15 @@ services:
   tapcarte-front:
     image: tapcarte:latest
     build: ./
-
+    networks:
+      - traefik
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik
       - traefik.http.routers.tapcarte.rule=Host(`tapcarte.56k.ing`)
       - traefik.http.routers.tapcarte.service=tapcarte
       - traefik.http.services.tapcarte.loadbalancer.server.port=5173
+
+networks:
+  traefik:
+    external: true
