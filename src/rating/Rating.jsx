@@ -11,7 +11,7 @@ export const Rating = () => {
 
     const [satisfactionNote, setSatisfactionNote] = useState(10);
 
-    return <>
+    return <div className="rating_page">
 
 
         <h1 className="hero text-center">Merci pour votre séjour au Swiss Inn !</h1>
@@ -65,6 +65,6 @@ export const Rating = () => {
 
         </div>
         </div>
-    </>
+    </div>
 
 }
