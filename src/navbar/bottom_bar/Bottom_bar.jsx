@@ -19,7 +19,9 @@ export const Bottom_bar = () =>{
                 <FontAwesomeIcon icon={faHouse} className="bottom_bar_icon"/>
             </Link>
             <FontAwesomeIcon icon={faHeart} className="bottom_bar_icon"/>
-            <FontAwesomeIcon icon={faPhone} className="bottom_bar_icon"/>
+            <Link to="/contact">
+                <FontAwesomeIcon icon={faPhone} className="bottom_bar_icon"/>
+            </Link>
         </div>
     )
 }

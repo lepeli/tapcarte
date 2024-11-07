@@ -74,7 +74,9 @@ export const Accueil = () => {
                 <p>- PLage Bleue (2km)</p>
                 <p>- Sortie en quand (5km)</p>
                 <p>- Aquarium (8km)</p>
-                <Link to="/services" className="acceuil_activites_button">Voir plus</Link>
+                <Link to="/services">
+                <button className="acceuil_activites_button">Voir plus</button>
+                </Link>
             </div>
             
 

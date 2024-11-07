@@ -1,6 +1,6 @@
 .acceuil_page{
+    height: 738px;
     width: 412px;
-    height: 883px;
 }
 
 .acceuil_header{
@@ -43,16 +43,21 @@
     color:white;
     background:#3B575A ;
     border-radius: 8px;
+    h2{
+        position: relative;
+        left: 5px;
+        font-size: 20px;
+    }
     p{
         position: relative;
         left:20px;
     }
     .acceuil_activites_button{
         position: relative;
-        bottom: 20px;
-        left:200px;
+        bottom: 35px;
+        left:220px;
         width: 122px;
-        height: 150px;
+        height: 40px;
         background:#2C2C2C;
         border-radius: 8px;
     }
