@@ -11,7 +11,9 @@ import { faCalendar } from '@fortawesome/free-solid-svg-icons'
 export const Bottom_bar = () =>{
     return(
         <div className="bottom_bar">
-            <FontAwesomeIcon icon={faList} className="bottom_bar_icon"/>
+            <Link to="/services">
+                <FontAwesomeIcon icon={faList} className="bottom_bar_icon"/>
+            </Link>
             <FontAwesomeIcon icon={faCalendar} className="bottom_bar_icon"/>
             <Link to="/home">
                 <FontAwesomeIcon icon={faHouse} className="bottom_bar_icon"/>
