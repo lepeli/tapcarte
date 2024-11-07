@@ -1,5 +1,5 @@
 import "./Formulaire.css"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Slider } from "@/components/ui/slider"
 import { Select, SelectItem, SelectContent, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Label } from "@/components/ui/label"
@@ -9,6 +9,12 @@ export const Formulaire = () => {
 
     const firstName = localStorage.getItem("firstName") == null ? "Demo" : localStorage.getItem("firstName")
     const lastName = localStorage.getItem("lastName") == null ? "Michel" : localStorage.getItem("lastName")
+
+    const navigate = useNavigate();
+
+    const next = event => {
+        navigate("/home")
+    }
 
     return <div className="formulaire_page">
         <div className="titre">
@@ -67,18 +73,10 @@ export const Formulaire = () => {
         </div>
 
         <div className="flex w-full">
-            <div className="flex-grow"><Button variant="outline">Passer</Button></div>
-            <div className="flex-grow"><Button variant="">Suivant</Button></div>
+            <div className="flex-grow"><Button onClick={next} variant="outline">Passer</Button></div>
+            <div className="flex-grow"><Button onClick={next} variant="">Suivant</Button></div>
         </div>
 
-        <div className="form_links">
-             <div className="form_suivant">
-                 <Link to={"/home"}>Suivant →</Link>
-             </div>
-             <div>
-                 <Link to={"/home"}>Passer</Link>
-             </div>
-        </div>
         <div className="trademark">
             <p>TAP' Carte - Tous droits réservés 2024</p>
         </div>
