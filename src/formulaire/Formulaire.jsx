@@ -27,7 +27,7 @@ export const Formulaire = () => {
 
     return <div className="formulaire_page">
         <div className="titre">
-            <h1 className="text-center hero">Bienvenue {firstName} {lastName},afin d'améliorer votre experience, nous vous invitons à répondre à quelques questions.</h1>
+            <h1 className="text-center hero">Bienvenue {firstName} {lastName}, afin d'améliorer votre experience, nous vous invitons à répondre à quelques questions.</h1>
         </div>
         <div className="questions">
             <Label htmlFor="age">Quel est votre âge ?</Label>
@@ -67,7 +67,7 @@ export const Formulaire = () => {
             </Select>
             <Label htmlFor="budgetSlider">Quel est votre budget ? $0-$500</Label>
             <Slider id="budgetSlider" onValueChange={setBudget} defaultValue={[33]} max={500} step={1} className="budget_slider"/>
-            <p>Votre budget est de: ${budget}</p>
+            <p className="text-xs">Votre budget est de: ${budget}</p>
             <Label htmlFor="interests">Quel genre de sortie vous intéresse le plus ?</Label>
             <Select id="interests">
                 <SelectTrigger className="w-[180px]">
@@ -80,14 +80,14 @@ export const Formulaire = () => {
                     <SelectItem value="4">Balades</SelectItem>
                 </SelectContent>
             </Select>
+            <div className="flex w-full">
+                <div className="flex-grow"><Button onClick={next} variant="outline" className="text-black">Passer</Button></div>
+                <div className="flex-grow"><Button onClick={next} variant="">Suivant</Button></div>
+            </div>
         </div>
 
-        <div className="flex w-full">
-            <div className="flex-grow"><Button onClick={next} variant="outline">Passer</Button></div>
-            <div className="flex-grow"><Button onClick={next} variant="">Suivant</Button></div>
-        </div>
 
-        <div className="trademark">
+        <div className="trademark text-center">
             <p>TAP' Carte - Tous droits réservés 2024</p>
         </div>
         
